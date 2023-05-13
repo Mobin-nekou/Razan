@@ -1,8 +1,8 @@
 
 
-document.querySelector('.button').addEventListener('click' , (e) => {
+document.querySelector('.button').addEventListener('click' , () => {
 
-    e.preventDefault();
+
     
     document.querySelector('.message').classList.toggle('worning')
 
