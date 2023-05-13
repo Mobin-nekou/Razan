@@ -1,0 +1,336 @@
+@font-face {
+  font-family: Galey;
+  src: url('surce/4_5940377599334157489.ttf') format('truetype');
+}
+
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: 0;
+  overflow: hidden;
+}
+
+:root
+{
+    --color-white:#F2F5F4;
+    --color-blue:#37B9F1;
+    --color-perple:#8739F9;
+}
+
+body
+{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--color-white); */
+}
+
+/* input box section */
+.aks img {
+  width: 100%;
+  /* object-fit: fill; */
+  border-radius: 0px 0 40% 40%;
+}
+
+.login-box {
+  width: 448px;
+  /* height: 632px; */
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 2px 4px 74px var(--color-blue);
+  /* overflow: hidden; */
+  transform: scale(0);
+  animation: an 2s 1.5s forwards;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  /* flex-wrap: wrap; */
+  padding: 40px;
+  /* height: 380px; */
+}
+
+.form-control
+{
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  margin-top: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-blue);
+  transition: all 1000ms;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+  padding: 12px 17px;
+  overflow: hidden;
+  outline: 2px solid #37b9f1;
+}
+
+.button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 3px solid var(--color-perple);
+  box-shadow: 4px 5px 17px -4px var(--color-perple);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-perple);
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.button:hover::before {
+  width: 250%;
+}
+.button:active{
+  opacity: 0.5;
+}
+
+.m {
+  font-family: Galey;
+  background-image: linear-gradient(45deg, var(--color-blue) 10% , var(--color-perple) 25% );
+  font-weight: bold;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: 17px;
+  /* padding-left: 49px; */
+  /* width: 68%; */
+  /* margin-left: 34px; */
+  /* margin-left: 12%;
+  width: 76%; */
+}
+
+.n {
+  padding: 5px;
+  margin-top: 2px;
+  caret-color: var(--color-blue);
+  outline: none;
+  border-bottom: 2px solid var(--color-blue);
+}
+
+span {
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+
+
+/* end of  input box section */
+
+/* svg section  */
+.TopSvg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(-500px);
+  animation:anim 3s forwards;
+}
+
+.ButtomSvg {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(500px);
+  animation:anim 3s forwards;
+}
+
+.ButtomSvg img 
+{ 
+  margin-bottom: -0.25%;
+}
+
+/* end of svg section  */
+
+
+
+/* message section */
+
+.message
+{
+  background-color: rgb(230, 104, 104);
+  margin: 20px 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+  /* transition: all 5s ; */
+}
+
+.worning
+{
+  position: relative;
+  transform: scale(1);
+  transition: all 1s ;
+  opacity: 1;
+}
+
+
+/* end of message section */
+
+
+
+
+
+@keyframes anim 
+{
+  0% 
+  {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% 
+  {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes an
+{
+  0% 
+  {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% 
+  {
+    transform: scale(1);
+  }
+}
+
+
+
+@media(max-width:600px)
+{
+
+  .login-box
+  {
+    transform: scale(0) ;
+    animation: an1 2s 1.5s forwards;
+  }
+
+  .TopSvg {
+
+    transform: scaleY(2);
+    animation:anim1 3s forwards;
+  }
+  
+  .ButtomSvg {
+    transform: scaleY(2);
+    animation:anim1 3s forwards;
+  }
+
+  @keyframes anim1 
+{
+  0% 
+  {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% 
+  {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes an1
+{
+  0% 
+  {
+    /* visibility: hidden; */
+    opacity: 0;
+  }
+  100% 
+  {
+    transform: scale(0.85);
+  }
+}
+
+}
+
+@media(max-width:470px)
+{
+
+  .login-box
+  {
+    transform: scale(0);
+    animation: an2 2s 1.5s forwards;
+  }
+
+  .TopSvg {
+
+    transform: scale(0);
+    animation:anim2 3s forwards;
+  }
+  
+  .ButtomSvg {
+    transform: scale(0);
+    animation:anim2 3s forwards;
+  }
+
+  @keyframes anim2 
+{
+  0% 
+  {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% 
+  {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transform: scale(4);
+  }
+}
+
+@keyframes an2
+{
+  0% 
+  {
+    /* visibility: hidden; */
+    opacity: 0;
+  }
+  100% 
+  {
+    transform: scale(0.75);
+  }
+}
+
+}
